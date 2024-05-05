@@ -15,8 +15,10 @@ function App() {
   const [meaning, setmeaning] = useState("");
 
   function PerformSearch(){
-    if(dict.filter(e => e.word === search).length > 0){
-      var search1 = dict.filter(e => e.word === search);
+    // console.log(dict.filter(e => e.word.toLowerCase() === search.toLowerCase()).length)
+    if(dict.filter(e => e.word.toLowerCase() === search.toLowerCase()).length > 0){
+      console.log("yess")
+      var search1 = dict.filter(e => e.word.toLowerCase() === search.toLowerCase());
       setmeaning(search1[0].meaning)
     }
     else{
